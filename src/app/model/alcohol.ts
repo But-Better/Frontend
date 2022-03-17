@@ -5,7 +5,7 @@ export class Alcohol{
     price!: number;
     alcPercentage!: number;
     amount!: number;
-    rating!: number;
+    rating!: string;
     ageRestriction!: number;
     fairtrade!: boolean;
     bio!: boolean;

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
 
+  homename = 'C2H5OH';
+
   constructor() { }
 
   ngOnInit(): void {

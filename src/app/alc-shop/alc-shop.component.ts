@@ -9,8 +9,8 @@ import { Alcohol } from '../model/alcohol';
 export class AlcShopComponent implements OnInit {
 
   alcoholList: Alcohol[] = [
-    {id: '1234', type: 'Bier', name: 'Zwickl', price: 1.50, alcPercentage: 5.0, amount: 100, rating: 'three', ageRestriction: 16, fairtrade: true, bio: false, countryOfOrigin: 'Germany'},
-    {id: '12345', type: 'Wein', name: 'Der gute Rote', price: 5.50, alcPercentage: 15.0, amount: 25, rating: 'five', ageRestriction: 16, fairtrade: true, bio: true, countryOfOrigin: 'Germany'}
+    {uuid: '1234', alcoholBeverageType: 'Bier', name: 'Zwickl', price: 1.50, percentage: 5.0, amount: 100, productRatingEnum: 'three', ageOfRestrictions: 16, fairTrade: true, bio: false, countryOfOrigin: 'Germany'},
+    {uuid: '12345', alcoholBeverageType: 'Wein', name: 'Der gute Rote', price: 5.50, percentage: 15.0, amount: 25, productRatingEnum: 'five', ageOfRestrictions: 16, fairTrade: true, bio: true, countryOfOrigin: 'Germany'}
 ];
 
   constructor() { }

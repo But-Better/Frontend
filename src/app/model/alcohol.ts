@@ -1,13 +1,13 @@
 export class Alcohol{
-    id!: string;
-    type!: string;
+    uuid!: string;
+    alcoholBeverageType!: string;
     name!: string;
     price!: number;
-    alcPercentage!: number;
+    percentage!: number;
     amount!: number;
-    rating!: string;
-    ageRestriction!: number;
-    fairtrade!: boolean;
+    productRatingEnum!: string;
+    ageOfRestrictions!: number;
+    fairTrade!: boolean;
     bio!: boolean;
     countryOfOrigin!: string;
 }

@@ -1,0 +1,36 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Art</th>
+            <th scope="col">Name</th>
+            <th scope="col">Preis</th>
+            <th scope="col">Prozent</th>
+            <th scope="col">Vorrat</th>
+            <th scope="col">Bewertung</th>
+            <th scope="col">FSK</th>
+            <th scope="col">Fairtrade</th>
+            <th scope="col">Bio</th>
+            <th scope="col">Herkunft</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let alc of alcoholList">
+            <td>{{ alc.id }}</td>
+            <td>{{ alc.type }}</td>
+            <td>{{ alc.name }}</td>
+            <td>{{ alc.price }}</td>
+            <td>{{ alc.alcPercentage }}</td>
+            <td>{{ alc.amount }}</td>
+            <td>{{ alc.rating }}</td>
+            <td>{{ alc.ageRestriction }}</td>
+            <td>{{ alc.fairtrade }}</td>
+            <td>{{ alc.bio }}</td>
+            <td>{{ alc.countryOfOrigin }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

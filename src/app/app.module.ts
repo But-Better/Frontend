@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { AlcShopComponent } from './alc-shop/alc-shop.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AlcoholService } from './service/alcohol.service';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import { AlcShopComponent } from './alc-shop/alc-shop.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AlcoholService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

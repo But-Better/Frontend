@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Alcohol } from '../model/alcohol';
 import { Observable } from 'rxjs/internal/Observable';
+import { PostAlcohol } from '../model/postAlc';
 //import { Observable } from 'rxjs/Observable';
 
 @Injectable({
@@ -24,8 +25,9 @@ export class AlcoholService {
     return this.http.get<Alcohol>(this.alcoholsUrl+'/'+id);
   }
 
-  public save(alcohol: Alcohol) {
-    return this.http.post<Alcohol>(this.alcoholsUrl, alcohol);
+  public save(alcohol: PostAlcohol) {
+    console.log(this.http.post<PostAlcohol>(this.alcoholsUrl, alcohol));
+    return this.http.post<PostAlcohol>(this.alcoholsUrl, alcohol);
   }
 
   public deleteByID(id: String):string{
@@ -40,5 +42,9 @@ export class AlcoholService {
             }
         });
     return this.deleteStatus;
+  }
+
+  public deleteAll(){
+    this.http.delete(this.alcoholsUrl);
   }
 }

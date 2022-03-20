@@ -1,0 +1,18 @@
+<form class="form-inline my-2 my-lg-0">
+    <ul class="navbar-nav mr-auto">
+        <li>
+    <input class="form-control mr-sm-2" type="price" placeholder="Preis ohne Steuern" aria-label="price" id="priceRaw">
+</li>
+<li>
+    <input class="form-control mr-sm-2" type="percent" placeholder="Steuern in Prozent" aria-label="percent" id="percent">
+</li>
+<li>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="calculatePriceWithVat()">Berechnen</button>
+</li>
+<li>
+    <h2>
+        Preis inklusive Steuern: {{priceVat}}
+    </h2>
+</li>
+</ul>
+  </form>

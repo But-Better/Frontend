@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/internal/Observable';
 export class AlcoholService {
 
   private alcoholsUrl!: string;
+  private deleteStatus='';
 
   constructor(private http: HttpClient) {
     this.alcoholsUrl = 'http://localhost:9090/v1/application/alcohol';
@@ -25,5 +26,19 @@ export class AlcoholService {
 
   public save(alcohol: Alcohol) {
     return this.http.post<Alcohol>(this.alcoholsUrl, alcohol);
+  }
+
+  public deleteByID(id: String):string{
+    this.http.delete(this.alcoholsUrl+'/'+id)
+        .subscribe({
+            next: data => {
+                this.deleteStatus = 'Delete successful';
+            },
+            error: error => {
+              this.deleteStatus = 'Ups something went wrong there buddy';
+                console.error('There was an error!', error);
+            }
+        });
+    return this.deleteStatus;
   }
 }

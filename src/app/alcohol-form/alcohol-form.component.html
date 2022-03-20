@@ -1,0 +1,121 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #alcoholForm="ngForm">
+
+        <div class="form-group">
+          <label for="alcoholBeverageType">Alkoholsorte</label>
+          <input type="text" [(ngModel)]="alcohol.alcoholBeverageType" 
+            class="form-control" 
+            id="alcoholBeverageType" 
+            name="alcoholBeverageType" 
+            placeholder="Alkoholsorte"
+            required #alcoholBeverageType="ngModel">
+        </div>
+        <div [hidden]="!alcoholBeverageType.pristine" class="alert alert-danger">Alkoholsorte wird benötigt</div>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="alcohol.name" 
+            class="form-control" 
+            id="name" 
+            name="name" 
+            placeholder="Alkohol Name"
+            required #name="ngModel">
+        </div>
+        <div [hidden]="!name.pristine" class="alert alert-danger">Name wird benötigt</div>
+       
+        <div class="form-group">
+          <label for="price">Preis</label>
+          <input type="number" [(ngModel)]="alcohol.price" 
+            class="form-control" 
+            id="price" 
+            name="price" 
+            placeholder="Preis"
+            required #price="ngModel">
+        </div>
+        <div [hidden]="!price.pristine" class="alert alert-danger">Preis wird benötigt</div>
+
+        <div class="form-group">
+          <label for="percentage">Prozent</label>
+          <input type="number" [(ngModel)]="alcohol.percentage" 
+            class="form-control" 
+            id="percentage" 
+            name="percentage" 
+            placeholder="Prozent Alkohol"
+            required #percentage="ngModel">
+        </div>
+        <div [hidden]="!percentage.pristine" class="alert alert-danger">Prozent wird benötigt</div>
+
+        <div class="form-group">
+          <label for="amount">Menge</label>
+          <input type="number" [(ngModel)]="alcohol.amount" 
+            class="form-control" 
+            id="amount" 
+            name="amount" 
+            placeholder="Stückzahl"
+            required #amount="ngModel">
+        </div>
+        <div [hidden]="!amount.pristine" class="alert alert-danger">Menge wird benötigt</div>
+
+        <div class="form-group">
+          <label for="productRatingEnum">Bewertung</label>
+          <input type="text" [(ngModel)]="alcohol.productRatingEnum" 
+            class="form-control" 
+            id="productRatingEnum" 
+            name="productRatingEnum" 
+            placeholder="0-5"
+            required #productRatingEnum="ngModel">
+        </div>
+        <div [hidden]="!productRatingEnum.pristine" class="alert alert-danger">Bewertung wird benötigt</div>
+
+        <div class="form-group">
+          <label for="ageOfRestrictions">Mindestalter</label>
+          <input type="number" [(ngModel)]="alcohol.ageOfRestrictions" 
+            class="form-control" 
+            id="ageOfRestrictions" 
+            name="ageOfRestrictions" 
+            placeholder="16-..."
+            required #ageOfRestrictions="ngModel">
+        </div>
+        <div [hidden]="!ageOfRestrictions.pristine" class="alert alert-danger">Mindestalter wird benötigt</div>
+
+        <div class="form-group">
+          <label for="fairTrade">Fairtrade</label>
+          <input type="fairTrade" [(ngModel)]="alcohol.fairTrade" 
+            class="form-control" 
+            id="fairTrade" 
+            name="fairTrade" 
+            placeholder="true/false"
+            required #fairTrade="ngModel">
+        </div>
+        <div [hidden]="!fairTrade.pristine" class="alert alert-danger">Fairtrade wird benötigt</div>
+
+        <div class="form-group">
+          <label for="bio">Bio</label>
+          <input type="text" [(ngModel)]="alcohol.bio" 
+            class="form-control" 
+            id="bio" 
+            name="bio" 
+            placeholder="true/false"
+            required #bio="ngModel">
+        </div>
+        <div [hidden]="!bio.pristine" class="alert alert-danger">Bio wird benötigt</div>
+
+
+        <div class="form-group">
+          <label for="countryOfOrigin">Herkunftsland</label>
+          <input type="text" [(ngModel)]="alcohol.countryOfOrigin" 
+            class="form-control" 
+            id="countryOfOrigin" 
+            name="countryOfOrigin" 
+            placeholder="Deutschland"
+            required #countryOfOrigin="ngModel">
+        </div>
+        <div [hidden]="!countryOfOrigin.pristine" class="alert alert-danger">Herkunftsland wird benötigt</div>
+
+
+        <button type="submit" [disabled]="!alcoholForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

@@ -12,11 +12,15 @@ export class AlcoholService {
   private alcoholsUrl!: string;
 
   constructor(private http: HttpClient) {
-    this.alcoholsUrl = 'http://localhost:8080/v1/product';
+    this.alcoholsUrl = 'http://localhost:9090/v1/application/alcohol';
   }
 
   public findAll(): Observable<Alcohol[]> {
     return this.http.get<Alcohol[]>(this.alcoholsUrl);
+  }
+
+  public findByID(id: String){
+    return this.http.get<Alcohol>(this.alcoholsUrl+'/'+id);
   }
 
   public save(alcohol: Alcohol) {

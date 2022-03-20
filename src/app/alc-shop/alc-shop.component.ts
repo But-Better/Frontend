@@ -14,6 +14,8 @@ export class AlcShopComponent implements OnInit {
     //{uuid: '12345', alcoholBeverageType: 'Wein', name: 'Der gute Rote', price: 5.50, percentage: 15.0, amount: 25, productRatingEnum: 'five', ageOfRestrictions: 16, fairTrade: true, bio: true, countryOfOrigin: 'Germany'}
 ];
 
+  deleteStatus = '';
+
   constructor(private alcoholService: AlcoholService) { }
 
   ngOnInit(): void {
@@ -21,6 +23,15 @@ export class AlcShopComponent implements OnInit {
     this.alcoholService.findAll().subscribe(data => {
       this.alcoholList = data;
     });
+  }
+
+  deleteAlc(){
+    console.log('got this from the html input to delete:' + (document.getElementById('alcIdDelete')as HTMLInputElement).value);
+    this.deleteStatus = this.alcoholService.deleteByID((document.getElementById('alcIdDelete')as HTMLInputElement).value);
+    this.alcoholService.findAll().subscribe(data => {
+      this.alcoholList = data;
+    });
+    window.location.reload();
   }
 
 }

@@ -7,17 +7,23 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { AlcShopComponent } from './alc-shop/alc-shop.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AlcoholService } from './service/alcohol.service';
+import { AlcoholFormComponent } from './alcohol-form/alcohol-form.component';
+import { FormsModule } from '@angular/forms';
+import { FoundAlcComponent } from './found-alc/found-alc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationBarComponent,
-    AlcShopComponent
+    AlcShopComponent,
+    AlcoholFormComponent,
+    FoundAlcComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [AlcoholService],
   bootstrap: [AppComponent]

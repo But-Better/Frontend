@@ -34,4 +34,12 @@ export class AlcShopComponent implements OnInit {
     window.location.reload();
   }
 
+  deleteAllAlc(){
+    console.log('delete all alcohols');
+    this.alcoholService.deleteAll();
+    this.alcoholService.findAll().subscribe(data => {
+      this.alcoholList = data;
+    });
+    window.location.reload();
+  }
 }

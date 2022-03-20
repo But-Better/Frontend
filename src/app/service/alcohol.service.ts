@@ -25,9 +25,9 @@ export class AlcoholService {
     return this.http.get<Alcohol>(this.alcoholsUrl+'/'+id);
   }
 
-  public save(alcohol: PostAlcohol) {
-    console.log(this.http.post<PostAlcohol>(this.alcoholsUrl, alcohol));
-    return this.http.post<PostAlcohol>(this.alcoholsUrl, alcohol);
+  public save(alcohol: Alcohol) {
+    console.log(this.http.post<Alcohol>(this.alcoholsUrl, alcohol));
+    return this.http.post<Alcohol>(this.alcoholsUrl, alcohol);
   }
 
   public deleteByID(id: String):string{
@@ -45,6 +45,16 @@ export class AlcoholService {
   }
 
   public deleteAll(){
-    this.http.delete(this.alcoholsUrl);
+    this.http.delete(this.alcoholsUrl)
+        .subscribe({
+            next: data => {
+                this.deleteStatus = 'Delete all successful';
+            },
+            error: error => {
+              this.deleteStatus = 'Ups something went wrong there buddy';
+                console.error('There was an error!', error);
+            }
+        });
+    return this.deleteStatus;
   }
 }

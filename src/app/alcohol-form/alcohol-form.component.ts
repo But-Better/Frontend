@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Alcohol } from '../model/alcohol';
-import { PostAlcohol } from '../model/postAlc';
 import { AlcoholService } from '../service/alcohol.service';
 
 
@@ -12,12 +11,12 @@ import { AlcoholService } from '../service/alcohol.service';
 })
 export class AlcoholFormComponent {
 
-  alcohol: PostAlcohol;
+  alcohol: Alcohol;
 
   constructor( private route: ActivatedRoute, 
     private router: Router, 
       private alcoholService: AlcoholService) { 
-        this.alcohol = new PostAlcohol();
+        this.alcohol = new Alcohol();
       }
 
   onSubmit() {

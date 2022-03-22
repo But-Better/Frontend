@@ -25,9 +25,9 @@ export class AlcShopComponent implements OnInit {
     });
   }
 
-  deleteAlc(){
-    console.log('got this from the html input to delete:' + (document.getElementById('alcIdDelete')as HTMLInputElement).value);
-    this.deleteStatus = this.alcoholService.deleteByID((document.getElementById('alcIdDelete')as HTMLInputElement).value);
+  deleteAlc(id:string){
+    console.log('got this from the html input to delete:' + id);
+    this.deleteStatus = this.alcoholService.deleteByID(id);
     this.alcoholService.findAll().subscribe(data => {
       this.alcoholList = data;
     });
@@ -42,4 +42,6 @@ export class AlcShopComponent implements OnInit {
     });
     window.location.reload();
   }
+
+  
 }

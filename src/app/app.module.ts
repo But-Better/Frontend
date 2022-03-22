@@ -10,6 +10,8 @@ import { AlcoholService } from './service/alcohol.service';
 import { AlcoholFormComponent } from './alcohol-form/alcohol-form.component';
 import { FormsModule } from '@angular/forms';
 import { FoundAlcComponent } from './found-alc/found-alc.component';
+import { ProductinfoComponent } from './productinfo/productinfo.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FoundAlcComponent } from './found-alc/found-alc.component';
     NavigationBarComponent,
     AlcShopComponent,
     AlcoholFormComponent,
-    FoundAlcComponent
+    FoundAlcComponent,
+    ProductinfoComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

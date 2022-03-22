@@ -14,6 +14,7 @@
             <th scope="col">Fairtrade</th>
             <th scope="col">Bio</th>
             <th scope="col">Herkunft</th>
+            <th scope="col">Konfiguration</th>
           </tr>
         </thead>
         <tbody>
@@ -29,13 +30,12 @@
             <td>{{ alc.fairTrade }}</td>
             <td>{{ alc.bio }}</td>
             <td>{{ alc.countryOfOrigin }}</td>
+            <td><button class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="deleteAlc(alc.uuid)">Delete</button></td>
           </tr>
         </tbody>
       </table>
 
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="delete" placeholder="Enter product ID" aria-label="Delete" id="alcIdDelete">
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="deleteAlc()">Delete</button>
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="deleteAllAlc()">Delete All</button>
         <h2>{{deleteStatus}}</h2>
       </form>

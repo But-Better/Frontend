@@ -28,18 +28,14 @@ export class AlcShopComponent implements OnInit {
   deleteAlc(id:string){
     console.log('got this from the html input to delete:' + id);
     this.deleteStatus = this.alcoholService.deleteByID(id);
-    this.alcoholService.findAll().subscribe(data => {
-      this.alcoholList = data;
-    });
+    this.alcoholService.findAll();
     window.location.reload();
   }
 
   deleteAllAlc(){
     console.log('delete all alcohols');
     this.alcoholService.deleteAll();
-    this.alcoholService.findAll().subscribe(data => {
-      this.alcoholList = data;
-    });
+    this.alcoholService.findAll();
     window.location.reload();
   }
 

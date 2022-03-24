@@ -18,25 +18,41 @@ export class AlcShopComponent implements OnInit {
 
   constructor(private alcoholService: AlcoholService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(){
     console.log(this.alcoholService.findAll());
     this.alcoholService.findAll().subscribe(data => {
       this.alcoholList = data;
+      console.log("fresh alcohollist aquired:");
+      console.log(data);
     });
   }
 
-  deleteAlc(id:string){
+  async deleteAlc(id:string){
     console.log('got this from the html input to delete:' + id);
     this.deleteStatus = this.alcoholService.deleteByID(id);
-    this.alcoholService.findAll();
-    window.location.reload();
+    await this.sleep(150);
+    this.alcoholService.findAll().subscribe(data => {
+      this.alcoholList = data;
+      console.log("fresh alcohollist aquired:");
+      console.log(data);
+    });
   }
 
-  deleteAllAlc(){
+  async deleteAllAlc(){
     console.log('delete all alcohols');
     this.alcoholService.deleteAll();
-    this.alcoholService.findAll();
-    window.location.reload();
+    await this.sleep(200);
+    this.alcoholService.findAll().subscribe(data => {
+      this.alcoholList = data;
+      console.log("fresh alcohollist aquired:");
+      console.log(data);
+    });
+  }
+
+   sleep(ms:number) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms);
+    });
   }
 
   

@@ -14,15 +14,20 @@ export class FoundAlcComponent implements OnInit {
   foundAlc!: Alcohol;
   searchId!: string;
 
-  constructor(private alcoholService: AlcoholService,private route: ActivatedRoute) { }
+  constructor(private alcoholService: AlcoholService,private route: ActivatedRoute) { 
+  }
 
   ngOnInit() {
 
       this.searchId = String(this.route.snapshot.paramMap.get('id'));
       console.log('search id aus link: ' + this.searchId);
 
-      console.log("start get request for this id: " + this.searchId);
-      this.alcoholService.findByID(this.searchId).subscribe(data => {this.foundAlc = data;});
+      this.alcoholService.findByID(this.searchId).subscribe(value => {
+        this.foundAlc = value;
+        console.log("fresh foundAlcohol aquired:");
+        console.log(value);});
+      
+      //this.alcoholService.findByID(this.searchId).subscribe(data => {this.foundAlc = data;});
   }
 
 }

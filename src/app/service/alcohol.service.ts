@@ -21,7 +21,8 @@ export class AlcoholService {
     return this.http.get<Alcohol[]>(this.alcoholsUrl);
   }
 
-  public findByID(id: String){
+  public findByID(id: String): Observable<Alcohol>{
+    console.log("start get request for this id: " +id);
     return this.http.get<Alcohol>(this.alcoholsUrl+'/'+id);
   }
 

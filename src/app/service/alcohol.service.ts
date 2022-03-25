@@ -45,7 +45,7 @@ export class AlcoholService {
     return this.deleteStatus;
   }
 
-  public deleteAll(){
+  public deleteAll():string{
     this.http.delete(this.alcoholsUrl)
         .subscribe({
             next: data => {

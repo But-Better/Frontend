@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { FoundAlcComponent } from './found-alc/found-alc.component';
 import { ProductinfoComponent } from './productinfo/productinfo.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { TranslatorComponent } from './translator/translator.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
     AlcoholFormComponent,
     FoundAlcComponent,
     ProductinfoComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    TranslatorComponent
   ],
   imports: [
     BrowserModule,

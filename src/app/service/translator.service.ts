@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class TranslatorService {
 
   private translationUrl = 'http://localhost:9090/v1/application/translator';
+  private analyseUrl = 'http://localhost:9090/v1/application/translator/analyse';
   private transUrlTextParam = '?text=';
   private translUrlLangParam = '&language=';
 
@@ -25,4 +26,16 @@ export class TranslatorService {
           this.translUrlLangParam +
           language;
   }
+
+  public analyseLanguage(text:String):Observable<string>{
+    const url = this.buildAnalysenURL(text);
+    return this.http.get(url,{responseType: 'text'});
+  }
+
+  private buildAnalysenURL(text:String): string{
+    return this.analyseUrl +
+          this.transUrlTextParam+
+          text;
+  }
+
 }

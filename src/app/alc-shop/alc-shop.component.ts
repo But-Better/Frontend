@@ -14,12 +14,9 @@ export class AlcShopComponent implements OnInit {
     //{uuid: '12345', alcoholBeverageType: 'Wein', name: 'Der gute Rote', price: 5.50, percentage: 15.0, amount: 25, productRatingEnum: 'five', ageOfRestrictions: 16, fairTrade: true, bio: true, countryOfOrigin: 'Germany'}
 ];
 
-  deleteStatus = '';
-
   constructor(private alcoholService: AlcoholService) { }
 
   async ngOnInit(){
-    console.log(this.alcoholService.findAll());
     this.alcoholService.findAll().subscribe(data => {
       this.alcoholList = data;
       console.log("fresh alcohollist aquired:");
@@ -29,7 +26,7 @@ export class AlcShopComponent implements OnInit {
 
   async deleteAlc(id:string){
     console.log('got this from the html input to delete:' + id);
-    this.deleteStatus = this.alcoholService.deleteByID(id);
+    console.log(this.alcoholService.deleteByID(id));
     await this.sleep(150);
     this.alcoholService.findAll().subscribe(data => {
       this.alcoholList = data;
@@ -40,7 +37,7 @@ export class AlcShopComponent implements OnInit {
 
   async deleteAllAlc(){
     console.log('delete all alcohols');
-    this.alcoholService.deleteAll();
+    console.log(this.alcoholService.deleteAll());
     await this.sleep(200);
     this.alcoholService.findAll().subscribe(data => {
       this.alcoholList = data;

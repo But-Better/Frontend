@@ -1,1 +1,50 @@
-<p>translator works!</p>
+
+<ul style="list-style-type:none;">
+    <li>
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Eingabe</label>
+    <textarea #textInput class="form-control" id="textInput" rows="5" style="max-width: 50%" ></textarea>
+</div>
+    </li>
+    <li>
+              <select #languageInput type="text" 
+              style="max-width: 10%"
+                class="form-control" 
+                id="alcoholBeverageType" 
+                name="alcoholBeverageType" 
+                >
+                <option value="DE">German</option>
+                <option value="EN">English</option>
+                <option value="BG">Bulgarian</option>
+                <option value="Czech">CS</option>
+                <option value="DA">Danish</option>
+                <option value="EL">Greek</option>
+                <option value="ES">Spanish</option>
+                <option value="ET">Estonian</option>
+
+                <option value="FI">Finish</option>
+                <option value="FR">French</option>
+                <option value="HU">Hungarian</option>
+                <option value="IT">Italian</option>
+                <option value="JA">Japanese</option>
+                <option value="LT">Lithuanian</option>
+                <option value="LV">Latvian</option>
+                <option value="NL">Dutch</option>
+                <option value="PL">Polish</option>
+
+                <option value="PT">Portuguese</option>
+                <option value="RO">Romanian</option>
+                <option value="RU">Russian</option>
+                <option value="SK">Slovak</option>
+                <option value="SL">Slovenian</option>
+                <option value="SV">Swedish</option>
+                <option value="ZH">Chinese</option>
+              </select>
+    </li>
+    <li>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="translate(textInput.value,languageInput.value)">Translate</button>
+    </li>
+</ul>
+
+<h2>Übersetzung: {{translatedText}}</h2>
+

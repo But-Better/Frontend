@@ -1,0 +1,36 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Type</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Percent</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Age restr.</th>
+          <th scope="col">Fairtrade</th>
+          <th scope="col">Eco</th>
+          <th scope="col">Made in</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ foundAlc.uuid }}</td>
+          <td>{{ foundAlc.alcoholBeverageType }}</td>
+          <td>{{ foundAlc.name }}</td>
+          <td>{{ foundAlc.price }}</td>
+          <td>{{ foundAlc.percentage }}</td>
+          <td>{{ foundAlc.amount }}</td>
+          <td>{{ foundAlc.productRatingEnum }}</td>
+          <td>{{ foundAlc.ageOfRestrictions }}</td>
+          <td>{{ foundAlc.fairTrade }}</td>
+          <td>{{ foundAlc.bio }}</td>
+          <td>{{ foundAlc.countryOfOrigin }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

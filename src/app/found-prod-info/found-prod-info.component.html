@@ -1,0 +1,42 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form class="form-inline my-2 my-lg-0">
+      <input #searchProdId class="form-control mr-sm-2" type="search" placeholder="Enter product ID" aria-label="Search"
+        id="searchId" style="max-width: 20%">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+        (click)='searchForId(searchProdId.value)'>Search</button>
+    </form>
+    <h2>{{errorMessage}}</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Procuct Id</th>
+          <th scope="col">Deliverytime</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Address Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Company</th>
+          <th scope="col">Street</th>
+          <th scope="col">City</th>
+          <th scope="col">Postcode</th>
+          <th scope="col">Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ foundProdInfo.uuid }}</td>
+          <td>{{ foundProdInfo.deliveryTime }}</td>
+          <td>{{ foundProdInfo.amount }}</td>
+          <td>{{ foundProdInfo.address.id }}</td>
+          <td>{{ foundProdInfo.address.name }}</td>
+          <td>{{ foundProdInfo.address.companyName }}</td>
+          <td>{{ foundProdInfo.address.street }}</td>
+          <td>{{ foundProdInfo.address.city }}</td>
+          <td>{{ foundProdInfo.address.postCode }}</td>
+          <td>{{ foundProdInfo.address.country }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

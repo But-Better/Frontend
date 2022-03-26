@@ -1,0 +1,52 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form class="form-inline my-2 my-lg-0">
+      <input #searchProdId class="form-control mr-sm-2" type="search" placeholder="Enter product ID" aria-label="Search"
+        id="searchId" style="max-width: 20%">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+        (click)='searchForId(searchProdId.value)'>Search</button>
+    </form>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Product Id</th>
+          <th scope="col">Deliverytime</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Address Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Company</th>
+          <th scope="col">Street</th>
+          <th scope="col">City</th>
+          <th scope="col">Postcode</th>
+          <th scope="col">Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prodInf of productInfoList">
+          <td>{{ prodInf.uuid }}</td>
+          <td>{{ prodInf.deliveryTime }}</td>
+          <td>{{ prodInf.amount }}</td>
+
+          <td>{{ prodInf.address.id }}</td>
+          <td>{{ prodInf.address.name }}</td>
+          <td>{{ prodInf.address.companyName }}</td>
+          <td>{{ prodInf.address.street }}</td>
+          <td>{{ prodInf.address.city }}</td>
+          <td>{{ prodInf.address.postCode }}</td>
+          <td>{{ prodInf.address.country }}</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <!--
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="delete" placeholder="Enter product ID" aria-label="Delete" id="alcIdDelete">
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="deleteAlc()">Delete</button>
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="deleteAllAlc()">Delete All</button>
+        <h2>{{deleteStatus}}</h2>
+      </form>
+    -->
+
+  </div>
+</div>

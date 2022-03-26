@@ -15,30 +15,31 @@ export class FoundProdInfoComponent implements OnInit {
   searchId!: string;
   errorMessage: string = '';
 
-  constructor(private productInfoService:ProductinfoService,private route:ActivatedRoute,private router:Router) { }
+  constructor(private productInfoService: ProductinfoService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.searchId = String(this.route.snapshot.paramMap.get('id'));
-      console.log('search id aus link: ' + this.searchId);
+    console.log('search id aus link: ' + this.searchId);
 
-      this.productInfoService.findById(this.searchId).subscribe(value => {
-        this.foundProdInfo = value;
-        console.log("fresh foundProdInfo aquired:");
-        console.log(value);});
+    this.productInfoService.findById(this.searchId).subscribe(value => {
+      this.foundProdInfo = value;
+      console.log("fresh foundProdInfo aquired:");
+      console.log(value);
+    });
   }
 
-  async searchForId(id:string){
-    this.router.navigateByUrl('/foundProdInfo/'+id);
+  async searchForId(id: string) {
+    this.router.navigateByUrl('/foundProdInfo/' + id);
 
     this.productInfoService.findById(id).subscribe(value => {
 
-      if(value == null){
+      if (value == null) {
         this.foundProdInfo = new Productinfo();
         this.foundProdInfo.address = new Address();
 
         this.errorMessage = 'Id could not be found';
       }
-      else{
+      else {
         this.foundProdInfo = value;
         this.errorMessage = '';
         console.log("fresh foundProdInfo aquired:");

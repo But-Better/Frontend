@@ -17,13 +17,13 @@ export class ProductinfoService {
     return this.http.get<Productinfo[]>(this.productURL);
   }
 
-  public findById(id:string): Observable<Productinfo>{
-    console.log("start get request for this id: " +id);
+  public findById(id: string): Observable<Productinfo> {
+    console.log("start get request for this id: " + id);
     return this.http.get<Productinfo>(this.productURL + "/" + id);
   }
 
-  public save(productinfo: Productinfo){
+  public save(productinfo: Productinfo) {
     console.log("start post for this productinfo:" + productinfo);
-    return this.http.post<Productinfo>(this.productURL,productinfo);
+    return this.http.post<Productinfo>(this.productURL, productinfo);
   }
 }

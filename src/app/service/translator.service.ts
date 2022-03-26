@@ -12,30 +12,30 @@ export class TranslatorService {
   private transUrlTextParam = '?text=';
   private translUrlLangParam = '&language=';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public translate(text:String,language:string):Observable<string>{
-    const url = this.buildTranslationURL(text,language);
-    return this.http.get(url,{responseType: 'text'});
+  public translate(text: String, language: string): Observable<string> {
+    const url = this.buildTranslationURL(text, language);
+    return this.http.get(url, { responseType: 'text' });
   }
 
-  private buildTranslationURL(text:String,language:string): string{
+  private buildTranslationURL(text: String, language: string): string {
     return this.translationUrl +
-          this.transUrlTextParam+
-          text+
-          this.translUrlLangParam +
-          language;
+      this.transUrlTextParam +
+      text +
+      this.translUrlLangParam +
+      language;
   }
 
-  public analyseLanguage(text:String):Observable<string>{
+  public analyseLanguage(text: String): Observable<string> {
     const url = this.buildAnalysenURL(text);
-    return this.http.get(url,{responseType: 'text'});
+    return this.http.get(url, { responseType: 'text' });
   }
 
-  private buildAnalysenURL(text:String): string{
+  private buildAnalysenURL(text: String): string {
     return this.analyseUrl +
-          this.transUrlTextParam+
-          text;
+      this.transUrlTextParam +
+      text;
   }
 
 }

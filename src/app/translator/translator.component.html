@@ -1,25 +1,21 @@
-
 <ul style="list-style-type:none;">
     <li>
-<div class="form-group">
-    <label for="exampleFormControlTextarea1"><b>Text Input</b></label>
-    <textarea #textInput class="form-control" id="textInput" rows="5" style="max-width: 50%" ></textarea>
-</div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1"><b>Text Input</b></label>
+            <textarea #textInput class="form-control" id="textInput" rows="5" style="max-width: 50%"></textarea>
+        </div>
     </li>
 
     <li>
-        <div><button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="getLanguage(textInput.value)">Analyse</button></div>
+        <div><button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                (click)="getLanguage(textInput.value)">Analyse</button></div>
         <p><b>Language of text: </b> {{analysedLanguage}}</p>
     </li>
 
     <li>
         <form class="form-inline my-2 my-lg-0">
-              <select #languageInput type="text" 
-              style="max-width: 20%"
-                class="form-control" 
-                id="alcoholBeverageType" 
-                name="alcoholBeverageType" 
-                >
+            <select #languageInput type="text" style="max-width: 20%" class="form-control" id="alcoholBeverageType"
+                name="alcoholBeverageType">
                 <option value="DE">German</option>
                 <option value="EN">English</option>
                 <option value="BG">Bulgarian</option>
@@ -46,15 +42,14 @@
                 <option value="SL">Slovenian</option>
                 <option value="SV">Swedish</option>
                 <option value="ZH">Chinese</option>
-              </select>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="translate(textInput.value,languageInput.value)">Translate</button>
-            </form>
-            <p><b>Translation: </b></p>
-            <div><p>{{translatedText}}</p></div>
+            </select>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                (click)="translate(textInput.value,languageInput.value)">Translate</button>
+        </form>
+        <p><b>Translation: </b></p>
+        <div>
+            <p>{{translatedText}}</p>
+        </div>
     </li>
-    
+
 </ul>
-
-
-
-

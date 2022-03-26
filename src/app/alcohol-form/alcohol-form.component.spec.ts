@@ -8,9 +8,9 @@ describe('AlcoholFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AlcoholFormComponent ]
+      declarations: [AlcoholFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

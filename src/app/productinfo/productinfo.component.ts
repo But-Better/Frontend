@@ -12,9 +12,9 @@ export class ProductinfoComponent implements OnInit {
 
   productInfoList: Productinfo[] = [];
 
-  constructor(private productInfoService: ProductinfoService,private router:Router) { }
+  constructor(private productInfoService: ProductinfoService, private router: Router) { }
 
-  async ngOnInit(){
+  async ngOnInit() {
     this.productInfoService.findAll().subscribe(data => {
       this.productInfoList = data;
       console.log("fresh productinfoList aquired:");
@@ -23,12 +23,12 @@ export class ProductinfoComponent implements OnInit {
     });
   }
 
-  public async searchForId(searchId:string){
+  public async searchForId(searchId: string) {
     console.log('got this from the html input: ' + searchId);
-    this.router.navigateByUrl('/foundProdInfo/'+searchId);
+    this.router.navigateByUrl('/foundProdInfo/' + searchId);
   }
 
-  sleep(ms:number) {
+  sleep(ms: number) {
     return new Promise((resolve) => {
       setTimeout(resolve, ms);
     });

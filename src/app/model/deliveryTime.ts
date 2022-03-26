@@ -1,15 +1,15 @@
-export class DeliveryTime{
-    date!:string;
-    hour!:number;
+export class DeliveryTime {
+    date!: string;
+    hour!: number;
 
-    public toString(){
+    public toString() {
         return this.date + 'T' +
             this.addZero(this.hour) +
-            ':00:00.000Z';        
+            ':00:00.000Z';
     }
 
-    private addZero(number:Number): string{
-        if (number < 10) return '0'+number;
+    private addZero(number: Number): string {
+        if (number < 10) return '0' + number;
         else return String(number);
     }
 }

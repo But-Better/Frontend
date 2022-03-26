@@ -1,4 +1,4 @@
-export class PostAlcohol{
+export class PostAlcohol {
     alcoholBeverageType!: string;
     name!: string;
     price!: number;

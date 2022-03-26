@@ -8,29 +8,29 @@ import { TranslatorService } from '../service/translator.service';
 })
 export class TranslatorComponent implements OnInit {
 
-  private textInput:string = '';
-  private languageInput:string='';
-  translatedText:string = '';
-  analysedLanguage:string = '';
+  private textInput: string = '';
+  private languageInput: string = '';
+  translatedText: string = '';
+  analysedLanguage: string = '';
 
 
 
-  constructor(private translatorService:TranslatorService) { }
+  constructor(private translatorService: TranslatorService) { }
 
   ngOnInit(): void {
   }
 
-  translate(text:string,language:string){
+  translate(text: string, language: string) {
     this.textInput = text;
     this.languageInput = language;
     console.log("got this as text input: " + this.textInput);
     console.log("got this as language input: " + this.languageInput);
 
-    this.translatorService.translate(this.textInput,this.languageInput).subscribe(translation => this.translatedText = translation);
+    this.translatorService.translate(this.textInput, this.languageInput).subscribe(translation => this.translatedText = translation);
     console.log("recieved this as translation: " + this.translatedText);
   }
 
-  getLanguage(text:string){
+  getLanguage(text: string) {
     this.textInput = text;
     console.log("got this as text input: " + this.textInput);
 
@@ -38,8 +38,8 @@ export class TranslatorComponent implements OnInit {
     console.log("recieved this as language: " + this.analysedLanguage);
   }
 
-  private shortToLongLanguage(shortLang:string): string{
-    switch(shortLang){
+  private shortToLongLanguage(shortLang: string): string {
+    switch (shortLang) {
       case '"DE"': return 'German';
       case '"EN"': return 'English';
       case '"BG"': return 'Bulgarian';
@@ -64,7 +64,7 @@ export class TranslatorComponent implements OnInit {
       case '"SL"': return 'Slovenian';
       case '"SV"': return 'Swedish';
       case '"ZH"': return 'Chinese';
-      default:return 'Unknown';
+      default: return 'Unknown';
     }
   }
 

@@ -11,14 +11,13 @@ import { TranslatorComponent } from './translator/translator.component';
 
 const routes: Routes = [
   { path: 'shop', component: AlcShopComponent },
-  { path: 'newAlc', component: AlcoholFormComponent},
-  { path: 'newProdInfo', component: ProdInfoFormComponent},
-  { path: 'foundAlc/:id', component: FoundAlcComponent},
-  { path: 'foundProdInfo/:id', component: FoundProdInfoComponent},
-  { path: 'prodInfo', component: ProductinfoComponent},
-  { path: 'calculator', component: CalculatorComponent},
-  { path: 'translator', component: TranslatorComponent}
-
+  { path: 'newAlc', component: AlcoholFormComponent },
+  { path: 'newProdInfo', component: ProdInfoFormComponent },
+  { path: 'foundAlc/:id', component: FoundAlcComponent },
+  { path: 'foundProdInfo/:id', component: FoundProdInfoComponent },
+  { path: 'prodInfo', component: ProductinfoComponent },
+  { path: 'calculator', component: CalculatorComponent },
+  { path: 'translator', component: TranslatorComponent }
 ];
 
 @NgModule({

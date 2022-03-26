@@ -5,6 +5,7 @@ import { AlcoholFormComponent } from './alcohol-form/alcohol-form.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { FoundAlcComponent } from './found-alc/found-alc.component';
 import { FoundProdInfoComponent } from './found-prod-info/found-prod-info.component';
+import { HomePicComponent } from './home-pic/home-pic.component';
 import { ProdInfoFormComponent } from './prod-info-form/prod-info-form.component';
 import { ProductinfoComponent } from './productinfo/productinfo.component';
 import { TranslatorComponent } from './translator/translator.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'foundProdInfo/:id', component: FoundProdInfoComponent },
   { path: 'prodInfo', component: ProductinfoComponent },
   { path: 'calculator', component: CalculatorComponent },
-  { path: 'translator', component: TranslatorComponent }
+  { path: 'translator', component: TranslatorComponent },
+  { path: '', component: HomePicComponent },
 ];
 
 @NgModule({

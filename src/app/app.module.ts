@@ -15,6 +15,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { TranslatorComponent } from './translator/translator.component';
 import { FoundProdInfoComponent } from './found-prod-info/found-prod-info.component';
 import { ProdInfoFormComponent } from './prod-info-form/prod-info-form.component';
+import { HomePicComponent } from './home-pic/home-pic.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProdInfoFormComponent } from './prod-info-form/prod-info-form.component
     CalculatorComponent,
     TranslatorComponent,
     FoundProdInfoComponent,
-    ProdInfoFormComponent
+    ProdInfoFormComponent,
+    HomePicComponent
   ],
   imports: [
     BrowserModule,

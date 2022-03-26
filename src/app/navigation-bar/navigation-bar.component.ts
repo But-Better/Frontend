@@ -12,27 +12,27 @@ import { AlcoholService } from '../service/alcohol.service';
 export class NavigationBarComponent implements OnInit {
 
   homename = 'C2H5OH';
-  
-  constructor(private router:Router,private alcoholService:AlcoholService) { }
+
+  constructor(private router: Router, private alcoholService: AlcoholService) { }
 
   ngOnInit(): void {
-    
+
   }
 
-  public async searchForId(searchId:string){
+  public async searchForId(searchId: string) {
     console.log('got this from the html input: ' + searchId);
-    
-    this.router.navigateByUrl('/foundAlc/'+searchId);
+
+    this.router.navigateByUrl('/foundAlc/' + searchId);
 
     await this.sleep(100);
     window.location.reload();
   }
 
-  sleep(ms:number) {
+  sleep(ms: number) {
     return new Promise((resolve) => {
       setTimeout(resolve, ms);
     });
   }
-  
+
 
 }

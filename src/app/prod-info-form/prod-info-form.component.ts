@@ -17,24 +17,24 @@ export class ProdInfoFormComponent {
   prodInfoDeliveryTime: DeliveryTime;
 
   constructor(
-    private router: Router, 
-      private prodInfoService: ProductinfoService) { 
-        this.prodInfo = new Productinfo();
-        this.prodInfoAddress = new Address();
-        this.prodInfoDeliveryTime = new DeliveryTime();
-      }
+    private router: Router,
+    private prodInfoService: ProductinfoService) {
+    this.prodInfo = new Productinfo();
+    this.prodInfoAddress = new Address();
+    this.prodInfoDeliveryTime = new DeliveryTime();
+  }
 
-      onSubmit() {
-        this.prodInfo.address = this.prodInfoAddress;
-        this.prodInfo.deliveryTime = this.prodInfoDeliveryTime.toString();
+  onSubmit() {
+    this.prodInfo.address = this.prodInfoAddress;
+    this.prodInfo.deliveryTime = this.prodInfoDeliveryTime.toString();
 
-        console.log("Got this as new productInfo:" + JSON.stringify({ data: this.prodInfo}, null, 4));
+    console.log("Got this as new productInfo:" + JSON.stringify({ data: this.prodInfo }, null, 4));
 
-        this.prodInfoService.save(this.prodInfo).subscribe(result => this.goToProdInfos());
-      }
-    
-      goToProdInfos(){
-        this.router.navigate(['/prodInfo']);
-      }
+    this.prodInfoService.save(this.prodInfo).subscribe(result => this.goToProdInfos());
+  }
+
+  goToProdInfos() {
+    this.router.navigate(['/prodInfo']);
+  }
 
 }

@@ -13,11 +13,11 @@ export class AlcoholFormComponent {
 
   alcohol: Alcohol;
 
-  constructor( private route: ActivatedRoute, 
-    private router: Router, 
-      private alcoholService: AlcoholService) { 
-        this.alcohol = new Alcohol();
-      }
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private alcoholService: AlcoholService) {
+    this.alcohol = new Alcohol();
+  }
 
   onSubmit() {
     //this.gotoAlcoholShop();
@@ -25,7 +25,7 @@ export class AlcoholFormComponent {
     this.alcoholService.save(this.alcohol).subscribe(result => this.gotoAlcoholShop());
   }
 
-  gotoAlcoholShop(){
+  gotoAlcoholShop() {
     this.router.navigate(['/shop']);
   }
 

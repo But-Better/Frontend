@@ -11,7 +11,7 @@ import { PostAlcohol } from '../model/postAlc';
 export class AlcoholService {
 
   private alcoholsUrl!: string;
-  private deleteStatus='';
+  private deleteStatus = '';
 
   constructor(private http: HttpClient) {
     this.alcoholsUrl = 'http://localhost:9090/v1/application/alcohol';
@@ -21,40 +21,40 @@ export class AlcoholService {
     return this.http.get<Alcohol[]>(this.alcoholsUrl);
   }
 
-  public findByID(id: String): Observable<Alcohol>{
-    console.log("start get request for this id: " +id);
-    return this.http.get<Alcohol>(this.alcoholsUrl+'/'+id);
+  public findByID(id: String): Observable<Alcohol> {
+    console.log("start get request for this id: " + id);
+    return this.http.get<Alcohol>(this.alcoholsUrl + '/' + id);
   }
 
   public save(alcohol: Alcohol) {
     return this.http.post<Alcohol>(this.alcoholsUrl, alcohol);
   }
 
-  public deleteByID(id: String):string{
-    this.http.delete(this.alcoholsUrl+'/'+id)
-        .subscribe({
-            next: data => {
-                this.deleteStatus = 'Delete successful';
-            },
-            error: error => {
-              this.deleteStatus = 'Ups something went wrong there buddy';
-                console.error('There was an error!', error);
-            }
-        });
+  public deleteByID(id: String): string {
+    this.http.delete(this.alcoholsUrl + '/' + id)
+      .subscribe({
+        next: data => {
+          this.deleteStatus = 'Delete successful';
+        },
+        error: error => {
+          this.deleteStatus = 'Ups something went wrong there buddy';
+          console.error('There was an error!', error);
+        }
+      });
     return this.deleteStatus;
   }
 
-  public deleteAll():string{
+  public deleteAll(): string {
     this.http.delete(this.alcoholsUrl)
-        .subscribe({
-            next: data => {
-                this.deleteStatus = 'Delete all successful';
-            },
-            error: error => {
-              this.deleteStatus = 'Ups something went wrong there buddy';
-                console.error('There was an error!', error);
-            }
-        });
+      .subscribe({
+        next: data => {
+          this.deleteStatus = 'Delete all successful';
+        },
+        error: error => {
+          this.deleteStatus = 'Ups something went wrong there buddy';
+          console.error('There was an error!', error);
+        }
+      });
     return this.deleteStatus;
   }
 }

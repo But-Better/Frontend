@@ -8,9 +8,9 @@ describe('FoundAlcComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FoundAlcComponent ]
+      declarations: [FoundAlcComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

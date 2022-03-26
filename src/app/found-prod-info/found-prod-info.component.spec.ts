@@ -8,9 +8,9 @@ describe('FoundProdInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FoundProdInfoComponent ]
+      declarations: [FoundProdInfoComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

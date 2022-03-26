@@ -8,25 +8,25 @@ import { CalculatorService } from '../service/calculator.service';
 })
 export class CalculatorComponent implements OnInit {
 
-  priceInput!:number;
-  vatInput!:number;
-  priceVat!:number;
+  priceInput!: number;
+  vatInput!: number;
+  priceVat!: number;
 
-  constructor(private calculatorService:CalculatorService) { 
+  constructor(private calculatorService: CalculatorService) {
   }
 
   ngOnInit(): void {
   }
 
-  calculatePriceWithVat(){
+  calculatePriceWithVat() {
 
-    this.priceInput = Number((document.getElementById('priceRaw')as HTMLInputElement).value);
-    this.vatInput = Number((document.getElementById('percent')as HTMLInputElement).value);
+    this.priceInput = Number((document.getElementById('priceRaw') as HTMLInputElement).value);
+    this.vatInput = Number((document.getElementById('percent') as HTMLInputElement).value);
 
     console.log('got this as price input: ' + this.priceInput);
     console.log('got this as percent input: ' + this.vatInput);
 
-    this.calculatorService.calculatePriceWithVAT(this.priceInput,this.vatInput).subscribe(data => this.priceVat = data);
+    this.calculatorService.calculatePriceWithVAT(this.priceInput, this.vatInput).subscribe(data => this.priceVat = data);
     console.log('calculator result: ' + this.priceVat);
   }
 

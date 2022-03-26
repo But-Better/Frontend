@@ -1,4 +1,4 @@
-export class Alcohol{
+export class Alcohol {
     uuid!: string;
     alcoholBeverageType!: string;
     name!: string;

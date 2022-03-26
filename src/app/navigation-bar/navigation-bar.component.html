@@ -14,21 +14,28 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/calculator">Calculator</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/prodInfo">Product Info</a>
-      </li>
+
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="/shop" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" routerLink="/prodInfo" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Product Info
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/newProdInfo">Create Product Information</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" routerLink="/shop" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Shop
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/newAlc">Neuer Stoff</a>
+          <a class="dropdown-item" routerLink="/newAlc">Create new alcohol article</a>
         </div>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input #searchId class="form-control mr-sm-2" type="search" placeholder="Enter product ID" aria-label="Search" id="searchId">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)='searchForId(searchId.value)'>Search</button>
+      <input #searchAlcId class="form-control mr-sm-2" type="search" placeholder="Enter Alcohol ID" aria-label="Search" id="searchId">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)='searchForId(searchAlcId.value)'>Search</button>
     </form>
   </div>
 </nav>

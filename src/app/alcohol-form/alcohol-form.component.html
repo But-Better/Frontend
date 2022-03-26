@@ -3,24 +3,24 @@
       <form (ngSubmit)="onSubmit()" #alcoholForm="ngForm">
 
         <div class="form-group">
-          <label for="alcoholBeverageType">Alkoholsorte</label>
+          <label for="alcoholBeverageType">Type</label>
           <select type="text" [(ngModel)]="alcohol.alcoholBeverageType" 
             class="form-control" 
             id="alcoholBeverageType" 
             name="alcoholBeverageType" 
             required #alcoholBeverageType="ngModel"
             >
-            <option value="beer">Bier</option>
-            <option value="mixedBeer">Mischbier</option>
-            <option value="wine">Wein</option>
-            <option value="sparklingWine">Sekt</option>
+            <option value="beer">Beer</option>
+            <option value="mixedBeer">Mixed beer</option>
+            <option value="wine">wine</option>
+            <option value="sparklingWine">Sparkling wine</option>
             <option value="vodka">Vodka</option>
             <option value="rum">Rum</option>
             <option value="gin">Gin</option>
-            <option value="custom">Anderes</option>
+            <option value="custom">Custom</option>
           </select>
         </div>
-        <div [hidden]="!alcoholBeverageType.pristine || alcoholBeverageType.untouched" class="alert alert-danger">Alkoholsorte wird benötigt</div>
+        <div [hidden]="!alcoholBeverageType.pristine || alcoholBeverageType.untouched" class="alert alert-danger">Type is necessary</div>
 
         <div class="form-group">
           <label for="name">Name</label>
@@ -31,23 +31,23 @@
             placeholder="Alkohol Name"
             required #name="ngModel">
         </div>
-        <div [hidden]="!name.pristine || name.untouched" class="alert alert-danger">Name wird benötigt</div>
+        <div [hidden]="!name.pristine || name.untouched" class="alert alert-danger">Name is necessary</div>
        
         <div class="form-group">
-          <label for="price">Preis</label>
-          <input type="number" min="0" [(ngModel)]="alcohol.price" 
+          <label for="price">Price</label>
+          <input type="number" min="0.01" [(ngModel)]="alcohol.price" 
             class="form-control" 
             id="price" 
             name="price" 
             placeholder="Preis"
             required #price="ngModel">
         </div>
-        <div [hidden]="!price.pristine || price.untouched" class="alert alert-danger">Preis wird benötigt</div>
-        <div [hidden]="price.valid || price.untouched" class="alert alert-danger">Preis muss größer als 0 sein.</div>
+        <div [hidden]="!price.pristine || price.untouched" class="alert alert-danger">Price is necessary</div>
+        <div [hidden]="price.valid || price.untouched" class="alert alert-danger">Price has to be bigger than 0</div>
 
 
         <div class="form-group">
-          <label for="percentage">Prozent</label>
+          <label for="percentage">Percent</label>
           <input type="number" min="1" max="100" [(ngModel)]="alcohol.percentage" 
             class="form-control" 
             id="percentage" 
@@ -55,11 +55,11 @@
             placeholder="Prozent Alkohol"
             required #percentage="ngModel">
         </div>
-        <div [hidden]="!percentage.pristine || percentage.untouched" class="alert alert-danger">Prozent wird benötigt</div>
-        <div [hidden]="percentage.valid || percentage.untouched" class="alert alert-danger">Prozent müssen zwischen 1 und 100 liegen</div>
+        <div [hidden]="!percentage.pristine || percentage.untouched" class="alert alert-danger">Percent is necessary</div>
+        <div [hidden]="percentage.valid || percentage.untouched" class="alert alert-danger">Percent has to be between 1 and 100</div>
 
         <div class="form-group">
-          <label for="amount">Menge</label>
+          <label for="amount">Amount</label>
           <input type="number" min="0" max="999999999" [(ngModel)]="alcohol.amount" 
             class="form-control" 
             id="amount" 
@@ -67,12 +67,12 @@
             placeholder="Stückzahl"
             required #amount="ngModel">
         </div>
-        <div [hidden]="!amount.pristine || amount.untouched" class="alert alert-danger">Menge wird benötigt</div>
-        <div [hidden]="amount.valid || amount.untouched" class="alert alert-danger">Menge muss zwischen 0 und 999999999 liegen</div>
+        <div [hidden]="!amount.pristine || amount.untouched" class="alert alert-danger">Amount is necessary</div>
+        <div [hidden]="amount.valid || amount.untouched" class="alert alert-danger">Amount has to be between 0 and 999999999</div>
 
 
         <div class="form-group">
-          <label for="productRatingEnum">Bewertung</label>
+          <label for="productRatingEnum">Rating</label>
           <select type="text" [(ngModel)]="alcohol.productRatingEnum" 
             class="form-control" 
             id="productRatingEnum" 
@@ -86,10 +86,10 @@
             <option value="five">5</option>
           </select>
         </div>
-        <div [hidden]="!productRatingEnum.pristine || productRatingEnum.untouched" class="alert alert-danger">Bewertung wird benötigt</div>
+        <div [hidden]="!productRatingEnum.pristine || productRatingEnum.untouched" class="alert alert-danger">Rating is necessary</div>
 
         <div class="form-group">
-          <label for="ageOfRestrictions">Mindestalter</label>
+          <label for="ageOfRestrictions">Age restriction</label>
           <input type="number" min="16" [(ngModel)]="alcohol.ageOfRestrictions" 
             class="form-control" 
             id="ageOfRestrictions" 
@@ -97,8 +97,8 @@
             placeholder="16-..."
             required #ageOfRestrictions="ngModel">
         </div>
-        <div [hidden]="!ageOfRestrictions.pristine || ageOfRestrictions.untouched" class="alert alert-danger">Mindestalter wird benötigt</div>
-        <div [hidden]="ageOfRestrictions.valid || ageOfRestrictions.untouched" class="alert alert-danger">Mindestalter muss größer als 15 sein</div>
+        <div [hidden]="!ageOfRestrictions.pristine || ageOfRestrictions.untouched" class="alert alert-danger">Age restriction is necessary</div>
+        <div [hidden]="ageOfRestrictions.valid || ageOfRestrictions.untouched" class="alert alert-danger">Age restriction has to be bigger then 15</div>
 
 
         <div class="form-group">
@@ -113,10 +113,10 @@
             <option value="false">Nein</option>
           </select>
         </div>
-        <div [hidden]="!fairTrade.pristine || fairTrade.untouched" class="alert alert-danger">Fairtrade wird benötigt</div>
+        <div [hidden]="!fairTrade.pristine || fairTrade.untouched" class="alert alert-danger">Fairtrade is necessary</div>
 
         <div class="form-group">
-          <label for="bio">Bio</label>
+          <label for="bio">Eco</label>
           <select type="text" [(ngModel)]="alcohol.bio" 
             class="form-control" 
             id="bio" 
@@ -127,10 +127,10 @@
             <option value="false">Nein</option>
           </select>
         </div>
-        <div [hidden]="!bio.pristine || bio.untouched" class="alert alert-danger">Bio wird benötigt</div>
+        <div [hidden]="!bio.pristine || bio.untouched" class="alert alert-danger">Eco is necessary</div>
 
         <div class="form-group">
-          <label for="countryOfOrigin">Herkunftsland</label>
+          <label for="countryOfOrigin">Made in</label>
           <input type="text" [(ngModel)]="alcohol.countryOfOrigin" 
             class="form-control" 
             id="countryOfOrigin" 
@@ -138,7 +138,7 @@
             placeholder="Deutschland"
             required #countryOfOrigin="ngModel">
         </div>
-        <div [hidden]="!countryOfOrigin.pristine || countryOfOrigin.untouched" class="alert alert-danger">Herkunftsland wird benötigt</div>
+        <div [hidden]="!countryOfOrigin.pristine || countryOfOrigin.untouched" class="alert alert-danger">Made in is necessary</div>
 
 
         <button type="submit" [disabled]="!alcoholForm.form.valid" 

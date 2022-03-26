@@ -27,7 +27,6 @@ export class AlcoholService {
   }
 
   public save(alcohol: Alcohol) {
-    console.log(this.http.post<Alcohol>(this.alcoholsUrl, alcohol));
     return this.http.post<Alcohol>(this.alcoholsUrl, alcohol);
   }
 
